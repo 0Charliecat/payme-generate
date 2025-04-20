@@ -1,0 +1,14 @@
+{
+	"name": "payme-generate",
+	"module": "index.js",
+	"type": "module",
+	"dependencies": {
+		"bysquare": "^2.12.3"
+	},
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
+}

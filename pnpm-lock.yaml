@@ -1,0 +1,38 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      bysquare:
+        specifier: ^2.12.3
+        version: 2.12.3
+
+packages:
+
+  bysquare@2.12.3:
+    resolution: {integrity: sha512-X97zRFdWwSZ1IGUfszDn3p5ysX62h74nmy/3QQhRPv0UxOwzp40ESrfoA+t68AidWdJFTbw4JdKLtE6hdGqxNQ==}
+    hasBin: true
+
+  lzma1@0.0.5:
+    resolution: {integrity: sha512-cJHuUOUqS2gmcjyEYxrqSF/1tii8gr0wTdIa92fIq4ryJD4Iek28qaueRnD7JarRGROwSPM7J0rNTZdlKMRaxA==}
+    engines: {node: '>=18.8', npm: '>=7.0'}
+
+  validator@13.15.0:
+    resolution: {integrity: sha512-36B2ryl4+oL5QxZ3AzD0t5SsMNGvTtQHpjgFO5tbNxfXbMFkY822ktCDe1MnlqV3301QQI9SLHDNJokDI+Z9pA==}
+    engines: {node: '>= 0.10'}
+
+snapshots:
+
+  bysquare@2.12.3:
+    dependencies:
+      lzma1: 0.0.5
+      validator: 13.15.0
+
+  lzma1@0.0.5: {}
+
+  validator@13.15.0: {}
