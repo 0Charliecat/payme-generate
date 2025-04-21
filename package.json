@@ -4,8 +4,8 @@
 	"description": "A generator of payme.sk payment links",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "bun build index.ts --outdir=. --packages=external --target=browser --minify --sourcemap",
-		"prepublish": "bun run build"
+		"build": "bun build index.ts --outdir=. --packages=external --target=browser --minify-syntax --sourcemap ",
+		"prepublish": "npm run build"
 	},
 	"keywords": [
 		"payme"

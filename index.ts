@@ -47,10 +47,6 @@ export class PayMeLink {
 				IBAN: "",
 				AM: 0,
 				CC: "EUR",
-				DT: undefined,
-				PI: undefined,
-				MSG: undefined,
-				CN: undefined,
 			}
 		} else if (typeof input === "string" || input! instanceof URL) {
 			const url = new URL(input.toString());
@@ -84,7 +80,6 @@ export class PayMeLink {
 		this.currency = paramsObject.CC;
 
 		this.dueDate = paramsObject.DT ? new Date(PayMeLink.dateConverterISO2JS(paramsObject.DT)) : undefined;
-		console.log(this.dueDate, paramsObject.DT);
 
 		this.paymentIdentifier = paramsObject.PI;
 		if (this.paymentIdentifier && this.paymentIdentifier!.length > 35) {
@@ -110,16 +105,23 @@ export class PayMeLink {
 	 * @returns {PayMeParams} The parameters for the PayMe link
 	 */
 	public get params() : PayMeParams {
-		return {
+		let params: PayMeParams = {
 			V: this.version,
 			IBAN: this.IBAN,
 			AM: this.amount,
 			CC: this.currency,
-			DT: this.dueDate ? this.dueDate.toISOString().split("T")[0] : undefined,
-			PI: this.paymentIdentifier,
-			MSG: this.message,
-			CN: this.creditorName,
 		}
+
+		if (this.dueDate)
+			params.DT = this.dueDate.toISOString().split("T")[0];
+		if (this.paymentIdentifier)
+			params.PI = this.paymentIdentifier;
+		if (this.message)
+			params.MSG = this.message;
+		if (this.creditorName)
+			params.CN = this.creditorName;
+
+		return params
 	}
 
 	/**
@@ -135,7 +137,7 @@ export class PayMeLink {
 	/**
 	 * Set the IBAN of the PayMe link
 	 * @param {string} iban IBAN (Account Number)
-	 * @returns 
+	 * @returns {PayMeLink} The PayMeLink instance
 	 */
 	public setIBAN(iban: string) {
 		if (!IBAN_REGEX.test(iban)) {
@@ -257,7 +259,7 @@ export class PayMeLink {
 	}
 
 	toString(): string {
-		const queryString = new URLSearchParams(this.params as any).toString();
+		const queryString = new URLSearchParams({ ...this.params } as any).toString();
 		return `https://payme.sk/?${queryString}`;
 	}
 
