@@ -1,15 +1,23 @@
 {
 	"name": "payme-generator",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A generator of payme.sk payment links",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "bun build index.ts --outdir=. --packages=external --target=browser --minify-syntax --sourcemap ",
+		"build": "bun build index.ts --outdir=. --packages=external --target=browser --minify-whitespace --minify-syntax --sourcemap",
 		"prepublish": "npm run build"
 	},
 	"keywords": [
 		"payme"
 	],
+	"homepage": "https://github.com/0Charliecat/payme-generate/#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/0Charliecat/payme-generate.git"
+	},
+	"bugs": {
+		"url": "https://github.com/0Charliecat/payme-generate/issues"
+	},
 	"author": "0CharlieCat <meow@charliecat.space>",
 	"license": "ISC",
 	"module": "index.js",

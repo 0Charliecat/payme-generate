@@ -1,4 +1,4 @@
-# payme-generate
+# payme-generator
 
 A generator of payme.sk payment links
 
