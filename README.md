@@ -118,7 +118,7 @@ For full documentation of the format, please refer to: https://www.payme.sk/docs
 6. **`setDueDate(dueDate: string): PayMeLink`**
    - Sets the due date for the PayMe link.
    - **Parameters**:
-     - `dueDate` *(string)*: The due date in ISO format (e.g., "2025-04-21").
+     - `dueDate` *(string)*: The due date in any native Date class supported format.
    - **Returns**:
      - *(PayMeLink)*: The updated `PayMeLink` instance.
    - **Example**:
@@ -171,7 +171,7 @@ For full documentation of the format, please refer to: https://www.payme.sk/docs
 11. **`getPayBySquare(): string`**
     - Generates the contents of a Pay BySquare QR code.
     - **Returns**:
-      - *(string)*: The QR code content.
+      - *(string)*: The QR code contents.
     - **Example**:
       ```typescript
       const qrCodeContent = payMeLink.getPayBySquare();

@@ -177,10 +177,10 @@ export class PayMeLink {
 
 	/**
 	 * Set the due date of the PayMe link
-	 * @param {string} dueDate Due Date
+	 * @param {string | Date} dueDate The due date in any native Date class supported format
 	 * @returns {PayMeLink} The PayMeLink instance
 	 */
-	public setDueDate(dueDate: string) {
+	public setDueDate(dueDate: string | Date) {
 		this.dueDate = new Date(dueDate);
 		if (this.dueDate.toString() === "Invalid Date") {
 			throw new Error("Invalid date format");
