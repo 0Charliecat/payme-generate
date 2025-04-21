@@ -1,5 +1,17 @@
 {
-	"name": "payme-generate",
+	"name": "payme-generator",
+	"version": "1.0.0",
+	"description": "A generator of payme.sk payment links",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "bun build index.ts --outdir=. --packages=external --target=browser --minify --sourcemap",
+		"prepublish": "bun run build"
+	},
+	"keywords": [
+		"payme"
+	],
+	"author": "0CharlieCat <meow@charliecat.space>",
+	"license": "ISC",
 	"module": "index.js",
 	"type": "module",
 	"dependencies": {
