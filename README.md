@@ -22,7 +22,7 @@ console.log(empty.setIBAN('SK9181800000007000155733').setAmount(0.01).setMessage
 
 For full documentation of the format, please refer to: https://www.payme.sk/docs/PaymentLinkStandard_v1_2.pdf
 
-> **DISCLAIMER**
+> [!WARNING]
 > Really don't send any money to this bank account (`SK9181800000007000155733`)
 > This bank account is only used as a preview. Please replace with your own Bank Account
 
